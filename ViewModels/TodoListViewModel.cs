@@ -11,6 +11,6 @@ namespace Todo.ViewModels
             items = new ObservableCollection<TodoItem>(items);
             
         }
-        public ObservableCollection<TodoItem> items{get;}
+        public ObservableCollection<TodoItem> Items{get;}
     }
 }
