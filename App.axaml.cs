@@ -17,9 +17,10 @@ namespace Todo
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
+                Todo.Services.DataBase db = new Todo.Services.DataBase();
+                desktop.MainWindow = new MainWindow                
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new MainWindowViewModel(db),
                 };
             }
 
