@@ -7,7 +7,8 @@ namespace Todo.Services{
         public IEnumerable<TodoItem> GetItems() => new[] {
             new TodoItem{Description="Get Milk"},
             new TodoItem{Description="walk the dog"},
-            new TodoItem {Description="Learn Avalonia", IsChecked=true}
+            new TodoItem {Description="Learn Avalonia", IsChecked=true},
+            new TodoItem {Description="yayeet", IsChecked=true}
         };
     }
 
