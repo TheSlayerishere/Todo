@@ -8,7 +8,7 @@
     <Button DockPanel.Dock="Bottom">Add an Item </Button>
     <StackPanel>
       <CheckBox Margin="4">Walk the dog </CheckBox>
-      <CheckBox Margin="4">Get some m1lkweed </CheckBox>
+      <CheckBox Margin="4">Get some milk </CheckBox>
     </StackPanel>    
   </DockPanel>
 </UserControl>
