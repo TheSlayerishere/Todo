@@ -13,7 +13,7 @@
                   IsChecked="{Binding IsChecked}"
                   Content="{Binding Description}"
                   />
-                  
+
         </DataTemplate>
       </ItemsControl.ItemTemplate>
     </ItemsControl>    

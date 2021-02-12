@@ -1,5 +1,6 @@
 ﻿using System;
 using Todo.Services;
+using Todo.Models;
 
 namespace Todo.ViewModels
 {
@@ -8,6 +9,7 @@ namespace Todo.ViewModels
         public MainWindowViewModel(DataBase db)
         {
             List = new TodoListViewModel(db.GetItems());
+            
 
         }
         public TodoListViewModel List {get;}
