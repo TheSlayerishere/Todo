@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Todo.Views
 {
-    public partial class AdditemView : UserControl
+    public partial class AddItemView : UserControl
     {
-        public AdditemView()
+        public AddItemView()
         {
             InitializeComponent();
         }
