@@ -5,7 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Todo.Views.TodoListView">
   <DockPanel> 
-    <Button DockPanel.Dock="Bottom">Add an Item </Button>
+    <Button DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.AddItem}">Add an Item </Button>
     <ItemsControl Items="{Binding Items}">
       <ItemsControl.ItemTemplate>
         <DataTemplate>
