@@ -34,12 +34,15 @@ namespace Todo.ViewModels
                     if (model != null)
                     {
                         List.Items.Add(model);
+                        Todo.Services.DataBase.SaveItems(List);              
                     }
 
                     Content = List;
                 });
+            
 
             Content = vm;
+            
         }
     }
 }
