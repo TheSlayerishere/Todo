@@ -19,15 +19,25 @@ namespace Todo.Services
             // bool IsChecked;
             using (var streamWriter = File.CreateText(@"Todoitems.txt"))
             {
-                foreach (var item in ItemList)
+                foreach (Todo.Models.TodoItem item in ItemList)
                 {
                     streamWriter.WriteLineAsync($"{item.Description.ToString()}AND{item.IsChecked.ToString()}");
                 }
                 
+            }           
+        }
+        public IEnumerable<TodoItem> LoadItems(){
+            var ItemList = File.ReadAllLines(@"Todoitems.txt");
+            List<TodoItem> TodoList = new List<TodoItem>();
+            string[] SplitItems = new string[1];
+            foreach (var item in ItemList)
+            {
+                SplitItems = item.Split("AND");
+
+                TodoList.Add(new TodoItem{Description=SplitItems[0], IsChecked= System.Boolean.Parse(SplitItems[1])});               
+
             }
-
-
-           
+            return TodoList;
         }
     }
 
