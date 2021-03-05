@@ -1,5 +1,8 @@
-Get MilkANDTrue
-walk the dogANDTrue
-Learn AvaloniaANDTrue
-dddddANDTrue
+Get MilkANDFalse
+walk the dogANDFalse
+Learn AvaloniaANDFalse
+dddddANDFalse
 heheANDFalse
+mkkkANDFalse
+kkANDTrue
+sssANDFalse

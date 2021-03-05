@@ -6,6 +6,7 @@
              x:Class="Todo.Views.TodoListView">
   <DockPanel> 
     <Button DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.AddItem}">Add an Item </Button>
+    <Button DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.Save}">Save</Button>
     <ItemsControl Items="{Binding Items}">
       <ItemsControl.ItemTemplate>
         <DataTemplate>
