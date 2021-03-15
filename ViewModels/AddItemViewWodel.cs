@@ -8,7 +8,7 @@ namespace Todo.ViewModels
     public class AddItemViewModel : ViewModelBase
     {
 
-        string description;
+        string? description;
 
         public AddItemViewModel()
         {

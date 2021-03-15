@@ -7,7 +7,7 @@ namespace Todo.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        ViewModelBase content;
+        ViewModelBase? content;
         public MainWindowViewModel(DataBase db)
         {
             Content = List = new TodoListViewModel(db.LoadItems());
@@ -22,6 +22,7 @@ namespace Todo.ViewModels
 
         public TodoListViewModel List { get; }
         public void Save() { DataBase.SaveItems(List); }
+        
         public void AddItem()
         {
             var vm = new AddItemViewModel();
@@ -36,7 +37,7 @@ namespace Todo.ViewModels
                     {
                         List.Items.Add(model);
                         Todo.Services.DataBase.SaveItems(List);
-                        // Todo.Services.DataBase.LoadItems();         
+                                
                     }
 
                     Content = List;
@@ -46,5 +47,6 @@ namespace Todo.ViewModels
             Content = vm;
 
         }
+        
     }
 }
