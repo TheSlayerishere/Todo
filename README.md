@@ -1,3 +1,3 @@
 # Todo
 
-This is simple avalonia TodoList application, originally made by following the avalonia tutorials I plan to add text file based databases to do soon:tm:
+This is simple avalonia TodoList application, originally made by following the avalonia tutorials with text file based databases to store all the todos after closing the application
