@@ -7,6 +7,7 @@ namespace Todo
 {
     class Program
     {
+        #region start/build the app, do not touch 
         // Initialization code. Don't use any Avalonia, third-party APIs or any
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
         // yet and stuff might break.
@@ -19,5 +20,6 @@ namespace Todo
                 .UsePlatformDetect()
                 .LogToTrace()
                 .UseReactiveUI();
+        #endregion
     }
 }

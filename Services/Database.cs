@@ -11,8 +11,7 @@ namespace Todo.Services
         public static void SaveItems(Todo.ViewModels.TodoListViewModel List)
         {
             var ItemList = List.Items;
-            // string Description;
-            // bool IsChecked;
+          
             using (var streamWriter = File.CreateText(Todoitems))
             {
                 foreach (Todo.Models.TodoItem item in ItemList)
@@ -22,24 +21,31 @@ namespace Todo.Services
                 
             }           
         }
-        public IEnumerable<TodoItem> LoadItems(){
-            
-            if (!File.Exists(Todoitems))
+        public IEnumerable<TodoItem> LoadItems
+        {
+            get
             {
-                File.Create(Todoitems);
-            }
-            var ItemList = File.ReadAllLines(Todoitems);
-            List<TodoItem> TodoList = new List<TodoItem>();
-            string[] SplitItems = new string[1];
-            foreach (var item in ItemList)
-            {
-                SplitItems = item.Split("FAUHGSUYFGUASYGFYUDGFUYGAUYHDSJBFHJKBAFKJBNSDJFDHYGBSJHKFNQWEJUHNRDJBAFUUIEFHBDNKSBFNJHSKBFEJKSDBFNIEBFNKJSFBUIWEHFBNAKJBNSJFHSAJBFDJSDBFUABJNSFBDJKBSJDJHSDHJSDSJHDJHSDSJHDSJHDSJHDSHJDSJHAKLSNFUWAOHFEUYSPT;IHURNBBBDFJKISNFJDS");
-                bool flag; 
-                System.Boolean.TryParse(SplitItems[1], out flag);
-                TodoList.Add(new TodoItem{Description=SplitItems[0], IsChecked=flag});               
 
+                List<TodoItem> TodoList = new List<TodoItem>();
+                if (!File.Exists(Todoitems))
+                {
+                    FileStream fileStream = File.Create(Todoitems);
+                    fileStream.DisposeAsync();
+                    return TodoList;
+                }
+                var ItemList = File.ReadAllLinesAsync(Todoitems, System.Text.Encoding.UTF8).Result;
+
+                string[] SplitItems = new string[1];
+                foreach (var item in File.ReadAllLines(Todoitems))
+                {
+                    SplitItems = item.Split("FAUHGSUYFGUASYGFYUDGFUYGAUYHDSJBFHJKBAFKJBNSDJFDHYGBSJHKFNQWEJUHNRDJBAFUUIEFHBDNKSBFNJHSKBFEJKSDBFNIEBFNKJSFBUIWEHFBNAKJBNSJFHSAJBFDJSDBFUABJNSFBDJKBSJDJHSDHJSDSJHDJHSDSJHDSJHDSJHDSHJDSJHAKLSNFUWAOHFEUYSPT;IHURNBBBDFJKISNFJDS");
+                    bool flag;
+                    System.Boolean.TryParse(SplitItems[1], out flag);
+                    TodoList.Add(new TodoItem { Description = SplitItems[0], IsChecked = flag });
+
+                }
+                return TodoList;
             }
-            return TodoList;
         }
     }
 

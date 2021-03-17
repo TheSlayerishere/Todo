@@ -6,14 +6,8 @@ namespace Todo.Views
 {
     public partial class AddItemView : UserControl
     {
-        public AddItemView()
-        {
-            InitializeComponent();
-        }
+        public AddItemView() => InitializeComponent();
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+        private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
     }
 }
