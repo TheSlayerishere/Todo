@@ -3,6 +3,7 @@ using Todo.Services;
 using System.Reactive.Linq;
 using Todo.Models;
 using System;
+using System.Threading;
 namespace Todo.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
@@ -21,7 +22,12 @@ namespace Todo.ViewModels
         }
 
         public TodoListViewModel List { get; }
-        public void Save() => DataBase.SaveItems(List);
+        public void Save()
+        {
+            Thread save = new Thread(() => DataBase.SaveItems(List));
+            save.Start();
+        }
+
 
         public void AddItem()
         {
@@ -37,7 +43,7 @@ namespace Todo.ViewModels
                     {
                         List.Items.Add(model);
                         Todo.Services.DataBase.SaveItems(List);
-                                
+
                     }
 
                     Content = List;
@@ -47,6 +53,6 @@ namespace Todo.ViewModels
             Content = vm;
 
         }
-        
+
     }
 }

@@ -1,6 +1,5 @@
-﻿using System;
+﻿//This is the main window initialiser
 using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
 
 namespace Todo
